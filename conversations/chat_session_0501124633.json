@@ -1,0 +1,100 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "How is the player with most goals scored?",
+        "SQL Query": "SELECT Player, Goals  FROM player_stats  ORDER BY Goals DESC  LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The player with the most goals scored is Mohamed Salah, who has scored a total of 31 goals."
+    },
+    {
+        "Interaction": 1,
+        "Question": "What team he plays for?",
+        "SQL Query": "SELECT Team FROM player_stats WHERE Player = 'Mohamed Salah';",
+        "SQL Data": [
+            {
+                "Team": "Liverpool"
+            }
+        ],
+        "Generated Explanation": "Mohamed Salah plays for Liverpool."
+    },
+    {
+        "Interaction": 2,
+        "Question": "How many points do they have?",
+        "SQL Query": "SELECT Pts FROM points_table;",
+        "SQL Data": [
+            {
+                "Pts": 93
+            },
+            {
+                "Pts": 92
+            },
+            {
+                "Pts": 74
+            },
+            {
+                "Pts": 71
+            },
+            {
+                "Pts": 69
+            },
+            {
+                "Pts": 58
+            },
+            {
+                "Pts": 56
+            },
+            {
+                "Pts": 52
+            },
+            {
+                "Pts": 51
+            },
+            {
+                "Pts": 51
+            },
+            {
+                "Pts": 49
+            },
+            {
+                "Pts": 48
+            },
+            {
+                "Pts": 46
+            },
+            {
+                "Pts": 45
+            },
+            {
+                "Pts": 40
+            },
+            {
+                "Pts": 39
+            },
+            {
+                "Pts": 38
+            },
+            {
+                "Pts": 35
+            },
+            {
+                "Pts": 23
+            },
+            {
+                "Pts": 22
+            }
+        ],
+        "Generated Explanation": "Liverpool, the team Mohamed Salah plays for, has 93 points."
+    },
+    {
+        "Interaction": 3,
+        "Question": "Which team has more points than them?",
+        "SQL Query": "SELECT Team  FROM points_table  WHERE Pts > 93;",
+        "SQL Data": [],
+        "Generated Explanation": "No team has more points than Liverpool. Liverpool has the highest points in the league with 93 points."
+    }
+]
