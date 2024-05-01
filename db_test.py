@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlite3
-from run_chat_bot import run_chat, clean_query
-from run_chat_explanation import run_explanation
+from openai_query import run_chat, clean_query
+from openai_explanation import run_explanation
 
 def load_csvs_to_sqlite(csv_file_paths, table_names):
     # Connect to a SQLite memory database

@@ -1,0 +1,57 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "What is the team with most goals in La liga?",
+        "SQL Query": "SELECT Team, SUM(Goals) AS TotalGoals FROM player_stats GROUP BY Team ORDER BY TotalGoals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Team": "Manchester City",
+                "TotalGoals": 146
+            }
+        ],
+        "Generated Explanation": "The team with the most goals in La Liga is Manchester City, with a total of 146 goals."
+    },
+    {
+        "Interaction": 1,
+        "Question": "How may goals does real madrid have",
+        "SQL Query": "SELECT Team, SUM(Goals) AS TotalGoals FROM player_stats WHERE Team = 'Real Madrid';",
+        "SQL Data": [
+            {
+                "Team": null,
+                "TotalGoals": null
+            }
+        ],
+        "Generated Explanation": "Real Madrid does not have any recorded goals in the dataset provided."
+    },
+    {
+        "Interaction": 2,
+        "Question": "How many goals does Cristiano Ronaldo have?",
+        "SQL Query": "SELECT Player, SUM(Goals) AS TotalGoals  FROM player_stats  WHERE Player = 'Cristiano Ronaldo';",
+        "SQL Data": [
+            {
+                "Player": "Cristiano Ronaldo",
+                "TotalGoals": 24
+            }
+        ],
+        "Generated Explanation": "Cristiano Ronaldo has scored a total of 24 goals."
+    },
+    {
+        "Interaction": 3,
+        "Question": "And lionel Messi, how many?",
+        "SQL Query": "SELECT Player, SUM(Goals) AS TotalGoals   FROM player_stats   WHERE Player = 'Lionel Messi';",
+        "SQL Data": [
+            {
+                "Player": null,
+                "TotalGoals": null
+            }
+        ],
+        "Generated Explanation": "Lionel Messi does not have any recorded goals in the dataset provided."
+    },
+    {
+        "Interaction": 4,
+        "Question": "WHat is the fastest car in formula 1?",
+        "SQL Query": "SELECT * FROM player_stats WHERE Player = 'fastest car in formula 1';",
+        "SQL Data": [],
+        "Generated Explanation": "The question about the fastest car in Formula 1 cannot be answered using the dataset provided, as it contains information related to player statistics in football, not Formula 1 racing data. Please provide relevant data or ask a question related to the available football player statistics."
+    }
+]

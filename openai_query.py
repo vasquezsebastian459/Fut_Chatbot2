@@ -26,6 +26,7 @@ def run_chat(question,context, temperature=0.4):
                 Make sure that the sql query is valid and can be run on the database.
                 Make sure the corresponding colums you used are in the expected table.
                 Make sure the query starts with SELECt and ends with a semicolon ';'
+                Make sure to SELECT always all the relevant columns from the question.
 
                 Context for the question:
                 {context}

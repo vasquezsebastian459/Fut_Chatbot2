@@ -1,0 +1,61 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "Which is the player with most uyellow cards",
+        "SQL Query": "SELECT Player, YellowCards FROM player_stats ORDER BY YellowCards DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "James Tarkowski",
+                "YellowCards": 12.0
+            }
+        ],
+        "Generated Explanation": "The player with the most yellow cards is James Tarkowski, who has received 12 yellow cards."
+    },
+    {
+        "Interaction": 1,
+        "Question": "What team does he play for?",
+        "SQL Query": "SELECT Team FROM player_stats WHERE Player = 'James Tarkowski';",
+        "SQL Data": [
+            {
+                "Team": "Burnley"
+            }
+        ],
+        "Generated Explanation": "James Tarkowski plays for Burnley."
+    },
+    {
+        "Interaction": 2,
+        "Question": "How many points does Burnley have?",
+        "SQL Query": "SELECT Pts FROM points_table WHERE Team = 'Burnley';",
+        "SQL Data": [
+            {
+                "Pts": 35
+            }
+        ],
+        "Generated Explanation": "Burnley has 35 points."
+    },
+    {
+        "Interaction": 3,
+        "Question": "How far is Burnely from the last position on the table?",
+        "SQL Query": "SELECT Pos FROM points_table WHERE Team = 'Burnley';",
+        "SQL Data": [
+            {
+                "Pos": 18
+            }
+        ],
+        "Generated Explanation": "Burnley is in the 18th position on the points table. To determine how far Burnley is from the last position, we need to know the total number of teams in the league. However, this information is not provided in the previous interactions. Please provide the total number of teams in the league, or clarify if you need information based on a different context."
+    },
+    {
+        "Interaction": 4,
+        "Question": "Compare the difference in points between the last team (position20) with Burnely",
+        "SQL Query": "SELECT Pts  FROM points_table  WHERE Pos = 20 UNION SELECT Pts  FROM points_table  WHERE Team = 'Burnley';",
+        "SQL Data": [
+            {
+                "Pts": 22
+            },
+            {
+                "Pts": 35
+            }
+        ],
+        "Generated Explanation": "The points for Burnley are 35, and the points for the team in the last position (position 20) are 22. The difference in points between Burnley and the last team is 35 - 22 = 13 points. Thus, Burnley has 13 more points than the team in the last position."
+    }
+]

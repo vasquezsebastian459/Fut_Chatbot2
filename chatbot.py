@@ -1,6 +1,6 @@
 from database_utils import load_csvs_to_sqlite, query_data
-from run_chat_bot import run_chat, clean_query
-from run_chat_explanation import run_explanation
+from openai_query import run_chat, clean_query
+from openai_explanation import run_explanation
 import json
 from datetime import datetime
 from json_encoder import CustomJSONEncoder
