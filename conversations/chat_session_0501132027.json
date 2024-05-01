@@ -1,0 +1,41 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "What is the distance in points between Manchester United and Manchester City?",
+        "SQL Query": "SELECT Pts FROM points_table WHERE Team = 'Manchester United' OR Team = 'Manchester City';",
+        "SQL Data": [
+            {
+                "Pts": 93
+            },
+            {
+                "Pts": 58
+            }
+        ],
+        "Generated Explanation": "The distance in points between Manchester United and Manchester City is 35 points. This is calculated based on the points from the SQL data provided, where Manchester City has 93 points and Manchester United has 58 points. Subtracting 58 from 93 gives a difference of 35 points."
+    },
+    {
+        "Interaction": 1,
+        "Question": "What was the score of the games between the two teams?",
+        "SQL Query": "SELECT HomeTeam, AwayTeam, Result FROM match_result WHERE HomeTeam = 'Team1' AND AwayTeam = 'Team2' OR HomeTeam = 'Team2' AND AwayTeam = 'Team1';",
+        "SQL Data": [],
+        "Generated Explanation": "The SQL query from the previous interaction attempted to retrieve the scores of the games between the two teams, but the data returned was an empty DataFrame. This indicates that there were no records found in the database for matches between the specified teams under the names 'Team1' and 'Team2'. It's possible that the team names in the query were placeholders and not correctly replaced with 'Manchester United' and 'Manchester City'.\n\nTo provide the correct information, the SQL query should be adjusted to use the actual team names. If you need the scores for the games between Manchester United and Manchester City, please confirm, and I can assist further with the correct query."
+    },
+    {
+        "Interaction": 2,
+        "Question": "What was the score of the games between both Manchester City and Manchester United?",
+        "SQL Query": "SELECT HomeTeam, AwayTeam, Result FROM match_result WHERE (HomeTeam = 'Manchester City' AND AwayTeam = 'Manchester United') OR (HomeTeam = 'Manchester United' AND AwayTeam = 'Manchester City');",
+        "SQL Data": [
+            {
+                "HomeTeam": "Manchester United",
+                "AwayTeam": "Manchester City",
+                "Result": "0:2"
+            },
+            {
+                "HomeTeam": "Manchester City",
+                "AwayTeam": "Manchester United",
+                "Result": "4:1"
+            }
+        ],
+        "Generated Explanation": "The scores of the games between Manchester City and Manchester United are as follows:\n\n1. Manchester United (Home) vs Manchester City (Away): 0-2\n2. Manchester City (Home) vs Manchester United (Away): 4-1\n\nThese results are based on the SQL data provided from the relevant interaction, which shows the outcomes of the matches between the two teams."
+    }
+]
