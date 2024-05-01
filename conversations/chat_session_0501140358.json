@@ -1,0 +1,14 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "give me the player with most red cards",
+        "SQL Query": "SELECT Player, RedCards FROM player_stats ORDER BY RedCards DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Granit Xhaka",
+                "RedCards": 2.0
+            }
+        ],
+        "Generated Explanation": "The player with the most red cards is Granit Xhaka, who has received 2 red cards."
+    }
+]

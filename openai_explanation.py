@@ -8,7 +8,7 @@ def run_explanation(question,prev_conv,temperature = 0.2):
         messages=[
             {"role": "system", "content":
                 f"""
-                Your task is to take the context information and generate an explanation for the user.
+                Your task is to take the context information and generate a short explanation for the user.
                 First see the sql Data generated in the last interaction, if it is relevant to the user question then answer the question
                 using that data only.
                 If the last interaction is not relevant then look for the other interactions.
