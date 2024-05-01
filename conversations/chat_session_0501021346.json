@@ -1,0 +1,26 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "What is the player with most goals for Manchester City?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Team = 'Manchester City' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Riyad Mahrez",
+                "Goals": 24
+            }
+        ],
+        "Generated Explanation": "There is no specific data provided in the previous interactions regarding the player with the most goals for Manchester City. Please provide the relevant data or specify the details so I can assist you accurately."
+    },
+    {
+        "Interaction": 1,
+        "Question": "What is the player with most goals for Arsenal?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Team = 'Arsenal' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Bukayo Saka",
+                "Goals": 12
+            }
+        ],
+        "Generated Explanation": "There is no specific data provided in the previous interactions regarding the player with the most goals for Arsenal. Please provide the relevant data or specify the details so I can assist you accurately."
+    }
+]

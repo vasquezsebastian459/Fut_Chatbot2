@@ -1,0 +1,38 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "What is the player with most goals for Manchester United?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Team = 'Manchester United' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Cristiano Ronaldo",
+                "Goals": 24
+            }
+        ],
+        "Generated Explanation": "As of my last update, Cristiano Ronaldo is one of the top goal scorers for Manchester United in recent times, especially notable during his periods at the club from 2003 to 2009 and then again starting from 2021. However, the all-time top goal scorer for Manchester United is Wayne Rooney, who scored a total of 253 goals for the club from 2004 to 2017, surpassing the previous record held by Sir Bobby Charlton."
+    },
+    {
+        "Interaction": 1,
+        "Question": "/Users/sebastianvasquez/Desktop/Fut_Chatbot/.venv/bin/python /Users/sebastianvasquez/Desktop/Fut_Chatbot/extract_db_info.py",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Team = 'Manchester United' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Cristiano Ronaldo",
+                "Goals": 24
+            }
+        ],
+        "Generated Explanation": "It seems like you are trying to run a Python script located on your desktop, specifically within a project folder named \"Fut_Chatbot\". To execute this script, you should ensure that your terminal or command prompt is open and that you navigate to the correct directory where the script is located. Once there, you can run the script by typing the command you've provided. Make sure that your Python environment is correctly set up and that all necessary dependencies for the script are installed in your virtual environment. If you encounter any errors during execution, the error messages will provide more details on what might be going wrong."
+    },
+    {
+        "Interaction": 2,
+        "Question": "Which players has the most goals scored?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The player with the most goals scored for Manchester United, based on the data provided, is Cristiano Ronaldo with 24 goals. This information comes from a query that selects the top goal scorer from the player_stats table where the team is specified as 'Manchester United'. The query orders the players by the number of goals scored in descending order and limits the output to the top result."
+    }
+]

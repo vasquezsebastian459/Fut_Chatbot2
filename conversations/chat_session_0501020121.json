@@ -1,0 +1,14 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "What is the player with most goals in Manchester United?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Team = 'Manchester United' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Cristiano Ronaldo",
+                "Goals": 24
+            }
+        ],
+        "Generated Explanation": "The player with the most goals in Manchester United history is currently Wayne Rooney, with a total of 253 goals scored during his time at the club."
+    }
+]

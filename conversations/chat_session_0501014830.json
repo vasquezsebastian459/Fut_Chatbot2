@@ -1,0 +1,28 @@
+[
+    {
+        "interactio": 0,
+        "question": "What is the goalkeeper of Arsenal?",
+        "sql_query": "SELECT Player FROM player_stats WHERE Team = 'Arsenal' AND Position = 'Goalkeeper';",
+        "data": [
+            {
+                "Player": "Aaron Ramsdale"
+            },
+            {
+                "Player": "Bernd Leno"
+            }
+        ],
+        "explanation": "The goalkeepers of Arsenal are Aaron Ramsdale and Bernd Leno."
+    },
+    {
+        "interactio": 1,
+        "question": "Which of them has played more games?",
+        "sql_query": "SELECT Player, Apearances FROM player_stats WHERE Team = 'Arsenal' AND Position = 'Goalkeeper' ORDER BY Apearances DESC LIMIT 1;",
+        "data": [
+            {
+                "Player": "Aaron Ramsdale",
+                "Apearances": 37
+            }
+        ],
+        "explanation": "Aaron Ramsdale has played more games with 37 appearances, while Bernd Leno has made fewer appearances."
+    }
+]

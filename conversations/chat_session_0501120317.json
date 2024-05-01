@@ -1,0 +1,47 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "How is the player with most goals>?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The player with the most goals is Mohamed Salah, who has scored 31 goals."
+    },
+    {
+        "Interaction": 1,
+        "Question": "What team does he play for?",
+        "SQL Query": "SELECT Team FROM player_stats WHERE Player = 'Mohamed Salah';",
+        "SQL Data": [
+            {
+                "Team": "Liverpool"
+            }
+        ],
+        "Generated Explanation": "Mohamed Salah plays for Liverpool."
+    },
+    {
+        "Interaction": 2,
+        "Question": "How many W does Liverpool have?",
+        "SQL Query": "SELECT W FROM points_table WHERE Team = 'Liverpool';",
+        "SQL Data": [
+            {
+                "W": 28
+            }
+        ],
+        "Generated Explanation": "Liverpool has 28 wins."
+    },
+    {
+        "Interaction": 3,
+        "Question": "What percentage of the total goals scored  by Liverpool did Mohamend Salah made?",
+        "SQL Query": "SELECT (SELECT Goals FROM player_stats WHERE Player = 'Mohamed Salah') * 100.0 / (SELECT SUM(Goals) FROM player_stats WHERE Team = 'Liverpool') AS SalahGoalPercentage;",
+        "SQL Data": [
+            {
+                "SalahGoalPercentage": 21.379310344827587
+            }
+        ],
+        "Generated Explanation": "Mohamed Salah scored 21.37931% of the total goals made by Liverpool."
+    }
+]

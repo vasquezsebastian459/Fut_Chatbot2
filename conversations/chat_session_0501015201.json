@@ -1,0 +1,27 @@
+[
+    {
+        "interaction": 0,
+        "question": "What is the most recent match of Liverpool?",
+        "sql_query": "SELECT * FROM match_result WHERE HomeTeam='Liverpool' OR AwayTeam='Liverpool' ORDER BY Date DESC LIMIT 1;",
+        "data": [
+            {
+                "Date": "30-Oct-2021",
+                "HomeTeam": "Liverpool",
+                "Result": "2:2",
+                "AwayTeam": "Brighton and Hove Albion"
+            }
+        ],
+        "explanation": "The most recent match of Liverpool was on 30th October 2021 against Brighton and Hove Albion, which ended in a 2-2 draw."
+    },
+    {
+        "interaction": 1,
+        "question": "When was the match Manchester United vs Manchester City?",
+        "sql_query": "SELECT Date FROM match_result WHERE (HomeTeam='Manchester United' AND AwayTeam='Manchester City') OR (HomeTeam='Manchester City' AND AwayTeam='Manchester United') ORDER BY Date DESC LIMIT 1;",
+        "data": [
+            {
+                "Date": "06-Nov-2021"
+            }
+        ],
+        "explanation": "I'm sorry, but I do not have the most recent information on the match between Manchester United and Manchester City. The most recent match details I have are about Liverpool. Would you like me to provide information about that instead?"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "How is the player with most goals in Manchester City?",
+        "SQL Query": "SELECT Player FROM player_stats WHERE Team = 'Manchester City' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Riyad Mahrez"
+            }
+        ],
+        "Generated Explanation": "The player with the most goals in Manchester City is Riyad Mahrez."
+    },
+    {
+        "Interaction": 1,
+        "Question": "How many apearances does he have?",
+        "SQL Query": "SELECT Apearances FROM player_stats WHERE Player = 'Riyad Mahrez';",
+        "SQL Data": [
+            {
+                "Apearances": 31
+            }
+        ],
+        "Generated Explanation": "Riyad Mahrez has made 31 appearances."
+    },
+    {
+        "Interaction": 2,
+        "Question": "How many Penalties goals does he have?",
+        "SQL Query": "SELECT Penalties FROM player_stats WHERE Player = 'Riyad Mahrez';",
+        "SQL Data": [
+            {
+                "Penalties": 7
+            }
+        ],
+        "Generated Explanation": "Riyad Mahrez has scored 7 penalty goals."
+    }
+]
