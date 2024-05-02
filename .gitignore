@@ -1,3 +1,4 @@
 /.zshrc
+.idea
 .venv/
 __pycache__/
