@@ -1,0 +1,61 @@
+[
+    {
+        "Question": "Who was the team that won the league?",
+        "SQL Query": "SELECT Team FROM points_table WHERE Pos = 1;",
+        "SQL Data": [
+            {
+                "Team": "Manchester City"
+            }
+        ],
+        "Generated Explanation": "The team that won the league was Manchester City."
+    },
+    {
+        "Question": "Who was the team that won the league?",
+        "SQL Query": "SELECT Team FROM points_table WHERE Pos = 1;",
+        "SQL Data": [
+            {
+                "Team": "Manchester City"
+            }
+        ],
+        "Generated Explanation": "The team that won the league was Manchester City."
+    },
+    {
+        "Question": "From this team, who was the top scorer?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Team = 'Manchester City' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Riyad Mahrez",
+                "Goals": 24
+            }
+        ],
+        "Generated Explanation": "The top scorer from Manchester City was Riyad Mahrez with 24 goals."
+    },
+    {
+        "Question": "How many yellow card does this player had?",
+        "SQL Query": "SELECT YellowCards FROM player_stats WHERE Player = 'player_name';",
+        "SQL Data": [],
+        "Generated Explanation": "Riyad Mahrez, the player in question, did not have any recorded yellow cards according to the data provided."
+    },
+    {
+        "Question": "Who was the second best team?",
+        "SQL Query": "SELECT Team FROM points_table WHERE Pos = 2;",
+        "SQL Data": [
+            {
+                "Team": "Liverpool"
+            }
+        ],
+        "Generated Explanation": "The second best team was Liverpool."
+    },
+    {
+        "Question": "Who was the top scorer from this team?",
+        "SQL Query": "SELECT Team, Player, Goals FROM player_stats WHERE Team = 'team_name' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [],
+        "Generated Explanation": "The data required to answer your question about the top scorer from Liverpool is not available in the provided SQL Data. The query did not return any results. Please ensure that the data is available or update the database to include this information."
+    },
+    {
+        "Question": "Who was the top scorer from this team?",
+        "SQL Query": "SELECT Team, Player, Goals FROM player_stats WHERE Team = 'team_name' ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [],
+        "Generated Explanation": "The data required to answer your question about the top scorer from Liverpool is not available in the provided SQL Data. The query did not return any results. Please ensure that the data is available or update the database to include this information."
+    }
+]

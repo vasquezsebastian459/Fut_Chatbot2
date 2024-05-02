@@ -1,0 +1,24 @@
+[
+    {
+        "Question": "Who was the top goal scorer?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The top goal scorer was Mohamed Salah with 31 goals."
+    },
+    {
+        "Question": "And the least top scorer?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats WHERE Goals > 0 ORDER BY Goals ASC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Granit Xhaka",
+                "Goals": 1
+            }
+        ],
+        "Generated Explanation": "The least top scorer, who scored more than zero goals, was Granit Xhaka with 1 goal."
+    }
+]

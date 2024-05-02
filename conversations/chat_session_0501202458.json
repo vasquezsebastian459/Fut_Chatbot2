@@ -1,0 +1,54 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "Who was the player with most goals?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The player with the most goals was Mohamed Salah, with a total of 31 goals."
+    },
+    {
+        "Interaction": 1,
+        "Question": "And the second?",
+        "SQL Query": "SELECT Player, Goals  FROM player_stats  ORDER BY Goals DESC  LIMIT 1, 1;",
+        "SQL Data": [
+            {
+                "Player": "Harry Kane",
+                "Goals": 27
+            }
+        ],
+        "Generated Explanation": "The second player with the most goals was Harry Kane, with a total of 27 goals."
+    },
+    {
+        "Interaction": 2,
+        "Question": "Who were the top 5 players. Make a list.",
+        "SQL Query": "SELECT Player, Goals  FROM player_stats  ORDER BY Goals DESC  LIMIT 5;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            },
+            {
+                "Player": "Harry Kane",
+                "Goals": 27
+            },
+            {
+                "Player": "Riyad Mahrez",
+                "Goals": 24
+            },
+            {
+                "Player": "Cristiano Ronaldo",
+                "Goals": 24
+            },
+            {
+                "Player": "SON Heung-min",
+                "Goals": 24
+            }
+        ],
+        "Generated Explanation": "The top 5 players based on goals scored are:\n\n1. Mohamed Salah - 31 goals\n2. Harry Kane - 27 goals\n3. Riyad Mahrez - 24 goals\n4. Cristiano Ronaldo - 24 goals\n5. SON Heung-min - 24 goals"
+    }
+]
