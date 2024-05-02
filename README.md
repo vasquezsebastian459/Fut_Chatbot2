@@ -2,13 +2,14 @@
 
 how to run: 
 
-run chatbot.py
+streamlit run streamlir_gui.py
 
 
 Requirements:
 - pandas
 - openai
 - sqlite3
+- streamlit
 
 
 Breakdown of the code:
