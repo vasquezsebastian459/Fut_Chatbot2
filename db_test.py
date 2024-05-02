@@ -5,7 +5,7 @@ from openai_explanation import run_explanation
 
 def load_csvs_to_sqlite(csv_file_paths, table_names):
     # Connect to a SQLite memory database
-    conn = sqlite3.connect(':memory:')
+    conn = sqlite3.connect(':memory:', check_same_thread=False)
     
     # Load each CSV file into a separate table
     for csv_file, table_name in zip(csv_file_paths, table_names):
