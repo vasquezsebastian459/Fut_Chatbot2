@@ -27,5 +27,8 @@ Function run_explanation from openai_explanation:
 This function takes the data retrieve from the query_data function and ask to the open ai api to use the data and the previous
 user's questions to generate a response.
 
+This is a detailed Work Flow of how the chatbot creates the response for the user:
+
+[Chatbot Work Flow](chatbot_workflow.pdf)
 
 

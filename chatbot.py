@@ -25,12 +25,17 @@ def interactive_chatbot_session(connection, max_attempts=5):
         data = query_data(connection, query)
         output['SQL Data'] = data
 
+        # Get a temporary context to feed the explanation function
         temp_context = context.copy()
         temp_context.append(output)
+
+        # Get the explanation from the chatbot given the temporary context
         completion = run_explanation(question, temp_context)
         response = completion.choices[0].message.content
         output['Generated Explanation'] = response
         print("Explanation:", response)
+
+        # Save all the interaction information to for future context
         context.append(output)
 
     # Save the conversation context to a JSON file named by the current timestamp
