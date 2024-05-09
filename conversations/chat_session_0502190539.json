@@ -1,0 +1,14 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "who is the top scorer of the league?",
+        "SQL Query": "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The top scorer of the league is Mohamed Salah with 31 goals."
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "Interaction": 0,
+        "Question": "Hello, i want to know who is the player with most goals",
+        "SQL Query": "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;",
+        "SQL Data": [
+            {
+                "Player": "Mohamed Salah",
+                "Goals": 31
+            }
+        ],
+        "Generated Explanation": "The player with the most goals is Mohamed Salah, who has scored 31 goals."
+    }
+]
