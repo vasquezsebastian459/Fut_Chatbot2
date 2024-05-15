@@ -20,3 +20,4 @@ tqdm==4.66.2
 typing_extensions==4.11.0
 tzdata==2024.1
 streamlit
+bcrypt
