@@ -1,6 +1,5 @@
 import streamlit as st
-import random
-
+from auth import authenticate_user, register_user
 from database_utils import load_csvs_to_sqlite, query_data
 from openai_query import run_chat, clean_query
 from openai_explanation import run_explanation
@@ -50,10 +49,11 @@ if "messages" not in st.session_state:
 if "context" not in st.session_state:
     st.session_state.context = []
 
-# Display chat messages
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.write(message["content"])
+# Function to display chat messages
+def display_chat():
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.write(message["content"])
 
 # Function for generating LLM response
 def generate_response(question, connection):
@@ -62,8 +62,8 @@ def generate_response(question, connection):
     output = {}
 
     # Get SQL query from chatbot
-    completion = run_chat(question, context)
-    query = completion.choices[0].message.content
+    # Simulating the question since this is a test
+    query = "SELECT Player, Goals FROM player_stats ORDER BY Goals DESC LIMIT 1;"
     query = clean_query(query)
     output['SQL Query'] = query
     
@@ -74,9 +74,8 @@ def generate_response(question, connection):
     # Update context with the new output
     context.append(output)
     
-    # Get the explanation from the chatbot given the updated context
-    completion = run_explanation(question, context)
-    response = completion.choices[0].message.content
+    # Simulate explanation response
+    response = "KLK MAMAGUEBO"
     output['Generated Explanation'] = response
     
     # Update the context in session state
@@ -89,17 +88,68 @@ csv_paths = ['dataset/all_match_results.csv', 'dataset/all_players_stats.csv', '
 table_names = ['match_result', 'player_stats', 'points_table']
 connection = load_csvs_to_sqlite(csv_paths, table_names)
 
-# User-provided prompt
-if prompt := st.chat_input(disabled=False):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.write(prompt)
+# Manage navigation state
+if "page" not in st.session_state:
+    st.session_state.page = "login"
 
-    # Generate a new response if last message is not from assistant
-    if st.session_state.messages[-1]["role"] != "assistant":
-        with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                response = generate_response(prompt, connection)
-                st.write(response)
-        message = {"role": "assistant", "content": response}
-        st.session_state.messages.append(message)
+# Handle navigation between pages
+def show_login_page():
+    st.session_state.page = "login"
+    st.experimental_rerun()
+
+def show_register_page():
+    st.session_state.page = "register"
+    st.experimental_rerun()
+
+# User login
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    if st.session_state.page == "login":
+        st.header("Login")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        if st.button("Login"):
+            authenticated, message = authenticate_user(username, password)
+            if authenticated:
+                st.session_state.authenticated = True
+                st.experimental_rerun()
+            else:
+                st.error(message)
+
+        if st.button("Go to Register Page"):
+            show_register_page()
+    elif st.session_state.page == "register":
+        st.header("Register")
+        reg_username = st.text_input("Register Username")
+        reg_password = st.text_input("Register Password", type="password")
+        if st.button("Register"):
+            registered, message = register_user(reg_username, reg_password)
+            if registered:
+                st.success(message)
+                show_login_page()
+            else:
+                st.error(message)
+        
+        if st.button("Back to Login"):
+            show_login_page()
+else:
+    # Display chat messages
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.write(message["content"])
+    # User-provided prompt
+    if prompt := st.chat_input(disabled=False):
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.write(prompt)
+
+        # Generate a new response if last message is not from assistant
+        if st.session_state.messages[-1]["role"] != "assistant":
+            with st.chat_message("assistant"):
+                with st.spinner("Thinking..."):
+                    response = generate_response(prompt, connection)
+                    st.write(response)
+            message = {"role": "assistant", "content": response}
+            st.session_state.messages.append(message)
